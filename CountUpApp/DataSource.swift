@@ -8,6 +8,7 @@
 class DataSource {
     
     var count:UInt8 = 0
+    //    let tmp:UInt8 = decToHex()
     
     func countUp(coeff: UInt16) {
         let num: UInt16 = UInt16(count) + coeff
@@ -17,11 +18,18 @@ class DataSource {
         else {
             count = 0
         }
-        print(count)
-    }
-    
-    func decToHex() -> String {
-        return String(format:"0x%02X",count)
     }
 }
 
+extension UInt8 {
+    func decToHex() -> String {
+        return String(format:"0X%02X",UInt8())
+    }
+}
+    
+
+class DataSource2: DataSource{
+    func decToBin() -> String {
+        return "0b"+String(count,radix:2)
+    }
+}

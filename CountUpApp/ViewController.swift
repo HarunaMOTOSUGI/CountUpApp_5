@@ -17,21 +17,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         updateLabelColor()
     }
-    
+
     let data1 = DataSource()
-    let data2 = DataSource()
+    let ds2 = DataSource2()
     let ONE_UP_COUNT: UInt16 = 1
     let TEN_UP_COUNT: UInt16 = 10
     
-    
     @IBAction func oneUpButton(_ sender: Any) {
         data1.countUp(coeff: ONE_UP_COUNT)
-        label.text = data1.decToHex()
+//        label.text = data1.decToHex()
+//        label.text = data1.count.decToHex()
+        label.text = data1.count.decToHex()
     }
     
     @IBAction func tenUpButton(_ sender: Any) {
-        data2.countUp(coeff: TEN_UP_COUNT)
-        label2.text = data2.decToHex()
+        ds2.countUp(coeff: TEN_UP_COUNT)
+        label2.text = ds2.decToBin()
     }
     
     @IBAction func changeColorButton(_ sender: Any) {
@@ -48,4 +49,6 @@ class ViewController: UIViewController {
             label2.textColor = .black
         }
     }
+    
+    
 }
